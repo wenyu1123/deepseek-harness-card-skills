@@ -1,0 +1,159 @@
+/* 固定记忆表格：沿用作者的长期/短期样式，独立作用域，无其他作品CSS依赖。 */
+details.cs-memory-table {
+  box-sizing: border-box;
+  width: calc(100% - 4px);
+  min-width: 0;
+  max-width: 100%;
+  border: 3px solid #111b22;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: 4px 4px 0 #111b22;
+  color: #29343b;
+  letter-spacing: 0;
+}
+details.cs-memory-table > summary {
+  min-height: 72px;
+  padding: 21px 40px 21px 56px;
+  border: 0;
+  border-radius: 0;
+  background: #2d4051 !important;
+  color: #f0f3f5;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+details.cs-memory-table > summary:hover { background: #354d60 !important; color: #fff; }
+details.cs-memory-table[open] > summary { border-bottom: 3px solid #111b22; }
+details.cs-memory-table > summary::before {
+  content: "✦";
+  left: 17px;
+  top: 24px;
+  width: 23px;
+  height: 23px;
+  border: 2px solid #111b22;
+  border-radius: 0;
+  background: #f7f6ed;
+  color: #7b919c;
+  font-size: 13px;
+  box-shadow: 2px 2px 0 #111b22;
+  transform: rotate(45deg);
+}
+details.cs-memory-table > summary::after { top: 31px; right: 17px; }
+details.cs-memory-table .cs-mem-meta {
+  padding: 11px 19px;
+  border-bottom: 1px solid #dce2e6;
+  background: #f1f4f5;
+  color: #61727e;
+  font: 12px/1.7 "Microsoft YaHei", "PingFang SC", sans-serif;
+  letter-spacing: .025em;
+}
+details.cs-memory-table .cs-mem-heading {
+  margin: 0;
+  padding: 17px 19px 10px;
+  border-bottom: 2px dashed #dde1e2;
+  color: #252e33;
+  font: 700 20px/1.5 "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+details.cs-memory-table .cs-mem-heading::before {
+  content: "⚜";
+  display: inline-block;
+  margin-right: 9px;
+  color: #c89446;
+  font-size: 22px;
+}
+details.cs-memory-table .cs-mem-scroll {
+  min-width: 0;
+  max-width: 100%;
+  margin: 12px 18px 9px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #78909d #edf0f1;
+}
+details.cs-memory-table .cs-mem-scroll:focus-visible { outline: 2px solid #597d91; outline-offset: 3px; }
+details.cs-memory-table table {
+  display: table !important;
+  table-layout: fixed;
+  width: 100% !important;
+  min-width: 570px;
+  margin: 0 !important;
+  border: 2px solid #111b22;
+  border-collapse: collapse !important;
+  border-spacing: 0;
+  color: #313a3d;
+  background: #fff;
+  font: 14px/1.9 "Noto Serif SC", "Songti SC", "SimSun", serif;
+  letter-spacing: 0;
+}
+details.cs-memory-table th,
+details.cs-memory-table td {
+  box-sizing: border-box;
+  padding: 10px 11px !important;
+  border: 1px solid #d9dfe2;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal !important;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  text-indent: 0;
+}
+details.cs-memory-table th {
+  padding: 10px 6px !important;
+  white-space: nowrap !important;
+  border-color: #455767;
+  border-bottom: 2px solid #111b22;
+  background: #2d4051 !important;
+  color: #f0f3f5 !important;
+  text-align: center;
+  font: 700 14px/1.6 "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+details.cs-memory-table td { background: transparent !important; color: #313a3d; }
+details.cs-memory-table tbody tr:nth-child(odd) { background: #f8f9fa !important; }
+details.cs-memory-table tbody tr:nth-child(even) { background: #fff9e9 !important; }
+details.cs-memory-table td:first-child { text-align: center; font-variant-numeric: tabular-nums; }
+details.cs-memory-table td:last-child { text-align: left; }
+details.cs-memory-table .cs-ltm th:nth-child(1) { width: 9%; }
+details.cs-memory-table .cs-ltm th:nth-child(2) { width: 19%; }
+details.cs-memory-table .cs-ltm th:nth-child(3) { width: 21%; }
+details.cs-memory-table .cs-ltm th:nth-child(4) { width: 51%; }
+details.cs-memory-table .cs-stm th:nth-child(1) { width: 7%; }
+details.cs-memory-table .cs-stm th:nth-child(2) { width: 17%; }
+details.cs-memory-table .cs-stm th:nth-child(3) { width: 17%; }
+details.cs-memory-table .cs-stm th:nth-child(4) { width: 10%; }
+details.cs-memory-table .cs-stm th:nth-child(5) { width: 49%; }
+details.cs-memory-table .cs-mem-empty td { padding: 17px !important; color: #81909a; text-align: center; font-family: sans-serif; font-size: 12px; }
+details.cs-memory-table .cs-mem-context {
+  margin: 18px 18px 20px;
+  padding: 13px 14px;
+  border: 1px solid #d7dee0;
+  border-left: 3px solid #a78f66;
+  background: #f5f6f2;
+  color: #5a666c;
+  font: 13px/1.9 "Noto Serif SC", "Songti SC", "SimSun", serif;
+  overflow-wrap: anywhere;
+}
+details.cs-memory-table .cs-mem-context b { color: #415664; font-weight: 700; }
+@media (max-width: 600px) {
+  details.cs-memory-table > summary { padding: 17px 30px 17px 46px; font-size: 15px; min-height: 64px; }
+  details.cs-memory-table > summary::before { left: 12px; top: 21px; width: 20px; height: 20px; }
+  details.cs-memory-table > summary::after { top: 27px; right: 13px; }
+  details.cs-memory-table .cs-mem-meta { padding: 9px 12px; font-size: 11px; }
+  details.cs-memory-table .cs-mem-meta::after { content: " · 表格可左右滑动"; }
+  details.cs-memory-table .cs-mem-heading { padding: 13px 12px 8px; font-size: 17px; }
+  details.cs-memory-table .cs-mem-scroll { margin: 10px 10px 6px; }
+  details.cs-memory-table .cs-mem-context { margin: 14px 10px; padding: 10px; font-size: 12px; }
+}
+
+details.cs-memory-table { display:block; margin:18px 0 24px; padding:0; text-align:left; }
+details.cs-memory-table, details.cs-memory-table * { box-sizing:border-box; }
+details.cs-memory-table > summary { display:block; position:relative; cursor:pointer; list-style:none; text-align:left; overflow-wrap:anywhere; }
+details.cs-memory-table > summary::-webkit-details-marker { display:none; }
+details.cs-memory-table > summary::marker { content:""; }
+details.cs-memory-table > summary::before { position:absolute; display:grid; place-items:center; line-height:1; }
+details.cs-memory-table > summary::after { content:""; position:absolute; width:8px; height:8px; border-right:2px solid #dbe5eb; border-bottom:2px solid #dbe5eb; transform:rotate(45deg); transition:transform .18s ease; }
+details.cs-memory-table[open] > summary::after { transform:rotate(225deg); }
+details.cs-memory-table > summary:focus-visible { outline:3px solid #bd945e; outline-offset:3px; }
+details.cs-memory-table .cs-mem-context p { margin:3px 0; padding:0; text-indent:0; }
+@media (prefers-reduced-motion:reduce) { details.cs-memory-table > summary::after { transition:none; } }

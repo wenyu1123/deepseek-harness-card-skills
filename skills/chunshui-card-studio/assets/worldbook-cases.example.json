@@ -1,0 +1,17 @@
+{
+  "note": "教学用例，需改为本作真实条目；预算数字仅针对这个小示例。此文件不导入春水。",
+  "requiredCoverage": ["雨巷街区·背景", "雨巷书店·入口", "林知夏·核心", "林知夏·旧事", "许闻舟·核心", "何素青·核心", "社区口述史·入口", "尚未寄出的信·事件"],
+  "cases": [
+    {"name": "不知姓名也能进入书店", "messages": [{"role": "user", "content": "去旧邮局对街看看有没有修书的师傅。"}], "mustHit": ["雨巷书店·入口"], "mustNotHit": ["林知夏·旧事"], "maxCharacters": 1200},
+    {"name": "姓名和别名定位", "messages": [{"role": "user", "content": "我想找林师傅。"}], "mustHit": ["林知夏·核心"], "mustNotHit": ["林知夏·旧事", "何素青·核心"], "maxCharacters": 1400},
+    {"name": "具体经历按需载入", "messages": [{"role": "user", "content": "我想问林知夏的旧事。"}], "mustHit": ["林知夏·核心", "林知夏·旧事"], "mustNotHit": ["许闻舟·核心"], "maxCharacters": 2400},
+    {"name": "一般过去不唤醒别人的档案", "messages": [{"role": "user", "content": "公司今天挺忙的，回家后想聊聊自己的过去和性格。"}], "mustHit": ["雨巷街区·背景"], "onlyHit": ["雨巷街区·背景"], "maxCharacters": 600},
+    {"name": "近轮称名后用代词续接", "messages": [{"role": "assistant", "content": "林知夏抬头，等你说明需要修复哪本书。"}, {"role": "user", "content": "继续，我把书递给她。"}], "mustHit": ["林知夏·核心"], "mustNotHit": ["林知夏·旧事"], "maxCharacters": 1400},
+    {"name": "离场后的资料退出", "messages": [{"role": "assistant", "content": "林知夏送你走出雨巷书店。"}, {"role": "user", "content": "我乘车离开。"}, {"role": "assistant", "content": "你已经回到自己住处。"}, {"role": "user", "content": "继续，我准备晚饭。"}], "onlyHit": ["雨巷街区·背景"], "maxCharacters": 600},
+    {"name": "店主有独立入口", "messages": [{"role": "user", "content": "去雨巷书店向许闻舟问一下活动报名。"}], "mustHit": ["雨巷书店·入口", "许闻舟·核心"], "maxCharacters": 2000},
+    {"name": "社区入口引出第三人", "messages": [{"role": "user", "content": "去问社区口述史小组最近的安排。"}], "mustHit": ["社区口述史·入口"], "mustNotHit": ["林知夏·旧事"], "maxCharacters": 1000},
+    {"name": "新人物被介绍后可续接", "messages": [{"role": "assistant", "content": "工作人员介绍了何素青，她正在整理路名访谈。"}, {"role": "user", "content": "向她说明来意。"}], "mustHit": ["何素青·核心"], "maxCharacters": 1300},
+    {"name": "事件资料按需出现", "messages": [{"role": "user", "content": "问问那封受潮旧信可以怎么处理。"}], "mustHit": ["尚未寄出的信·事件"], "mustNotHit": ["林知夏·旧事"], "maxCharacters": 1400},
+    {"name": "孤立继续不载入全书", "messages": [{"role": "user", "content": "继续"}], "onlyHit": ["雨巷街区·背景"], "maxCharacters": 600}
+  ]
+}
